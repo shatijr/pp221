@@ -26,7 +26,6 @@ public class MainApp {
         userService.add(new User("Andrey", "Potyaev", "pot322@mail.ru", audi), audi);
         userService.add(new User("Shock", "Kaktotak", "almaz@mail.ru", mercedes), mercedes);
 
-
         List<User> users = userService.listUsers();
         for (User user : users) {
             System.out.println(user);

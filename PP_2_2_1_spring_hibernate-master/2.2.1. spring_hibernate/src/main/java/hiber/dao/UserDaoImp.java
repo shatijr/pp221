@@ -22,14 +22,12 @@ public class UserDaoImp implements UserDao {
         sessionFactory.getCurrentSession().save(car);
     }
 
-
     @Override
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
         return query.getResultList();
     }
-
 
     @Override
     @Transactional
