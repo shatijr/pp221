@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -30,7 +29,6 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    @Transactional
     public User getUserByModelAndSeries(String model, int series) {
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(
                 "SELECT u FROM User u JOIN u.car c WHERE c.model = :model AND c.series = :series");
